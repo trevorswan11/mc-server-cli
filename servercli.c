@@ -99,17 +99,7 @@ SuggestionResult find_suggestion(const char* input) {
         } else {
             return result;
         }
-    } else if (strcmp(word1, "gamemode") == 0) {
-        if (strlen(word2) == 0 && input[strlen("gamemode")] == ' ') {
-            source = gamemodes;
-            target = "";
-        } else if (strlen(word2) > 0) {
-            source = gamemodes;
-            target = word2;
-        } else {
-            return result;
-        }
-    }
+    } 
 
     size_t len = strlen(target);
     for (int i = 0; source[i]; ++i) {

@@ -78,16 +78,6 @@ static const char* suggestions[] = {
     NULL
 };
 
-
-static const char* gamemodes[] = {
-    "survival",
-    "creative",
-    "adventure",
-    "spectator",
-    "hardcore",
-    NULL
-};
-
 static const char* gamerules[] = {
     "announceAdvancements",
     "blockExplosionDropDecay",
