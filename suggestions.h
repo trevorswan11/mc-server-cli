@@ -123,5 +123,14 @@ static const char* gamerules[] = {
     NULL
 };
 
+static const char* gamemodes[] = {
+    "survival",
+    "creative",
+    "adventure",
+    "spectator",
+    "hardcore",
+    NULL
+};
+
 #endif
 
