@@ -1,5 +1,6 @@
 # MC Server ClI
 A basic command line interface for interacting with [mcrcon](https://github.com/Tiiffi/mcrcon) with autocomplete.
+- To make use of this cli, you must have mcrcon accessible in your system's path
 
 ## Getting Started
 1. First, clone this repository using `git clone https://github.com/trevorswan11/mc-server-cli.git`
