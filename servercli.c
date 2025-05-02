@@ -161,6 +161,22 @@ void custom_input(char* buffer) {
     }
 }
 
+int print_players(int port, const char* password) {
+    const char* input = "list";
+    size_t cmd_size = 512 + strlen(input);
+    char* command = malloc(cmd_size);
+    if (!command) {
+        perror("malloc");
+        return 1;
+    }
+
+    snprintf(command, cmd_size, "mcrcon -H localhost -P %d -p %s \"%s\"", port, password, input);
+    int ret = system(command);
+
+    free(command);
+    return ret;
+}
+
 int main() {
     load_env(".env");
     if (port == -1) {
@@ -171,10 +187,13 @@ int main() {
         return 1;
     }
 
+    if (print_players(port, password) == 1) {
+        return 1;
+    }
+
     set_conio_terminal_mode();
     char input[MAX_INPUT];
     custom_input(input);
-    printf("You typed: %s\n", input);
 
     size_t cmd_size = 512 + strlen(input);
     char* command = malloc(cmd_size);
@@ -182,7 +201,7 @@ int main() {
         perror("malloc");
         return 1;
     }
-
+    
     snprintf(command, cmd_size, "mcrcon -H localhost -P %d -p %s \"%s\"", port, password, input);
     int ret = system(command);
 
