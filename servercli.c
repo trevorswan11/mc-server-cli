@@ -150,7 +150,6 @@ void custom_input(char* buffer) {
                 size_t base_len = strlen(suggestion.base_input);
                 size_t sug_len = strlen(suggestion.suggestion);
                 if (base_len < sug_len && len + (sug_len - base_len) < MAX_INPUT - 1) {
-                    // Append only the remainder
                     strcpy(buffer + len, suggestion.suggestion + base_len);
                     len = strlen(buffer);
                 }
